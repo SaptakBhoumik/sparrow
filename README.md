@@ -1,5 +1,5 @@
 A WIP javascript runtime similar to Node.js made for fun
-
+It is based on quickjs
 ## Requirements to build
 - clang
 - python3

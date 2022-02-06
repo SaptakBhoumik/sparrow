@@ -424,8 +424,10 @@ int main(int argc, char **argv)
             }
             if (opt) {
                 fprintf(stderr, "sparrow: unknown option '-%c'\nUse 'sparrow -h' to learn how to use the cli\n", opt);
+                exit(1);
             } else {
                 fprintf(stderr, "sparrow: unknown option '--%s'\nUse 'sparrow -h' to learn how to use the cli\n", longopt);
+                exit(1);
             }
         }
     }

@@ -349,7 +349,7 @@ int main(int argc, char **argv)
                     expr = argv[optind++];
                     break;
                 }
-                fprintf(stderr, "qjs: missing expression for -e\n");
+                fprintf(stderr, "sparrow: missing expression for -e\n");
                 exit(2);
             }
             if (opt == 'I' || !strcmp(longopt, "include")) {
@@ -423,11 +423,10 @@ int main(int argc, char **argv)
                 continue;
             }
             if (opt) {
-                fprintf(stderr, "qjs: unknown option '-%c'\n", opt);
+                fprintf(stderr, "sparrow: unknown option '-%c'\nUse 'sparrow -h' to learn how to use the cli\n", opt);
             } else {
-                fprintf(stderr, "qjs: unknown option '--%s'\n", longopt);
+                fprintf(stderr, "sparrow: unknown option '--%s'\nUse 'sparrow -h' to learn how to use the cli\n", longopt);
             }
-            help();
         }
     }
 
@@ -441,7 +440,7 @@ int main(int argc, char **argv)
         rt = JS_NewRuntime();
     }
     if (!rt) {
-        fprintf(stderr, "qjs: cannot allocate JS runtime\n");
+        fprintf(stderr, "sparrow: cannot allocate JS runtime\n");
         exit(2);
     }
     if (memory_limit != 0)
@@ -452,7 +451,7 @@ int main(int argc, char **argv)
     js_std_init_handlers(rt);
     ctx = JS_NewCustomContext(rt);
     if (!ctx) {
-        fprintf(stderr, "qjs: cannot allocate JS context\n");
+        fprintf(stderr, "sparrow: cannot allocate JS context\n");
         exit(2);
     }
 

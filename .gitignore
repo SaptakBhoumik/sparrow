@@ -1,0 +1,4 @@
+buildir
+*.out
+*.so
+*.dll
